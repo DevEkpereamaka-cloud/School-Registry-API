@@ -43,7 +43,7 @@ let sendMoney = (fromId, toId, amount) => {
   let sender = db.find((user) => user.userName === fromId);
   let receiver = db.find((user) => user.userName === toId);
   if (typeof sender !== "object" || typeof receiver !== "object") {
-    return "TRANSACTIOM FAILED: ONE OR BOTH USERS NOT FOUND";
+    return "TRANSACTION FAILED: ONE OR BOTH USERS NOT FOUND";
   } else if (
     typeof sender === "object" &&
     typeof receiver === "object" &&
