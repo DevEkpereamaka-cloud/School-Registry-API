@@ -53,7 +53,7 @@ app.put("/CNPS/update/:id", (req, res) => {
     res.status(400).send(`ERROR: ${bouncer.join(", ")}`);
   }
   res.send(`${student.name} has been successfully updated }`);
-  console.log(students[studentId]);
+  console.log(students);
   students[studentId] = { ...students[studentId], ...student };
 });
 app.patch("/CNPS/update/:id", (req, res) => {
@@ -68,7 +68,7 @@ app.patch("/CNPS/update/:id", (req, res) => {
   }
   res.send(`${student.name} has been updated`);
   students[studentId] = { ...students[studentId], ...student };
-  console.log(students[studentId]);
+  console.log(students);
 });
 app.delete("/CNPS/delete/:id", (req, res) => {
   const student = students.findIndex((s) => s.id === Number(req.params.id));
